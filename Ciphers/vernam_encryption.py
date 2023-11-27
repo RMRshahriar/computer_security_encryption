@@ -1,4 +1,3 @@
-
 # function to apply algo of vernam cipher
 def vernam(plain_text,key):
 
@@ -6,8 +5,8 @@ def vernam(plain_text,key):
     
     plain_text=plain_text.replace(" ","")
     key=key.replace(" ","")
-    plain_text=plain_text.lower()
-    key=key.lower()
+    plain_text=plain_text.upper()
+    key=key.upper()
     
     # conditional statements
     if(len(plain_text)!=len(key)):
@@ -18,9 +17,9 @@ def vernam(plain_text,key):
         
         # iterating through the length
         for i in range(len(plain_text)):
-            k1=ord(plain_text[i])-97
-            k2=ord(key[i])-97
-            s=chr((k1+k2)%26+97)
+            k1=ord(plain_text[i])-65
+            k2=ord(key[i])-65
+            s=chr((k1+k2)%26+65)
             cipher_text+=s
         print("Enrypted message is: ",cipher_text)
 
@@ -30,10 +29,4 @@ key=input("Enter the one time pad: ")
 vernam(plain_text,key)
 
 
-'''
-----------OUTPUT----------
-Enter the message: Good morning
-Enter the one time pad: Quantum king
-Encrypted message is:  wioqfidxqam
->>> 
-'''
+
